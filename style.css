@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+:root{
+    --clr-cerise: #da4167ff;
+    --clr-mint-cream: #ebf5eeff;
+    --clr-raisin-black: #212431ff;
+    --clr-medium-turquoise: #40c9c0ff;
+    --clr-independence: #424d61ff;
+    --ff-accent: 'Open Sans', sans-serif;
+    --ff-primary:'Roboto', sans-serif;
+}
+
+html,
+body{
+    margin: 0px; 
+    line-height: 1.6;
+    text-align: center;
+    position: relative; 
+
+}
+
+html{
+    display: flex; 
+    justify-content: center;
+}
+
+h1{
+    font-family: var(--ff-accent); 
+}
+
+a, h2,h3,p,li{
+    font-family: var(--ff-primary);  
+}
+
+
+.flex {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fullscreen{
+    height: 100vh; 
+    width: 100%;
+}
+
+.section-about, 
+.section-portfolio, 
+.section-resume,
+.section-contact{
+    background-color: var(--clr-mint-cream);
+}
+
+/*INITIAL LANDING PAGE*/
+.canvas-section{
+    position: absolute; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    top: 0;
+    z-index: 999;
+}
+
+canvas{
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    background-color: var(--clr-raisin-black);
+    z-index: -1;
+}
+
+header{
+    position: relative; 
+}
+.name{
+    color: var(--clr-cerise); 
+}
+
+.welcome-message h1{
+    font-size: 3.5em;      
+}
+
+.welcome-message h2{
+    font-size: 2em; 
+}
+
+.welcome-message{
+    margin: 12rem; 
+    color: var(--clr-mint-cream);
+
+}
+
+
+/*LANDING PAGE BUTTON*/
+.btn-landing-container{
+    position: relative; 
+    margin: 2.5rem;
+    background: var(--clr-cerise); 
+    width: 15rem; 
+    border-radius: 10px;
+}
+
+.btn-landing{
+    text-decoration: none;
+    color: var(--clr-raisin-black); 
+    font-size: 2rem; 
+    
+}
+
+
+/*NAV BAR STYLES*/
+nav{
+    background: var(--clr-independence);
+    width: 100%; 
+    height: 4rem; 
+    display: flex;
+    align-items: center; 
+    position: absolute; 
+    z-index: 10; 
+}
+
+nav ul{
+    list-style: none; 
+    display: grid; 
+    grid-template-columns: repeat(5, auto);
+    width: 70%; 
+}
+
+nav a{
+    color: var(--clr-mint-cream); 
+    text-decoration: none; 
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    position: relative; 
+}
+
+nav a:after{
+    content:''; 
+    position: absolute; 
+    background-color: var(--clr-mint-cream);  
+    height: 3px; 
+    width: 0; 
+    left: 0;
+    bottom: 25px;
+    transition: 0.3s; 
+}
+
+nav a:hover{
+    color: var(--clr-medium-turquoise); 
+}
+
+nav a:hover:after{
+    width:100%; 
+}
+
+/*RESPONSIVE NAVBAR STYLES*/
+@media screen and (max-width: 768px){
+    nav{
+        background-color: red;
+    }
+}
+
+
+/*ABOUT ME STYLES START HERE*/ 
+.about-icon{
+    max-height: 10rem;
+}
+
+#split-container{
+    border: solid 2px red; 
+    display: flex;
+    justify-content: center;
+}
+
+/*.section-about{
+    display: flex !important; 
+    justify-content: center !important; 
+    align-items: center;
+}
+#split-container{
+    border: solid 2px red; 
+    height: 70%; 
+    display: flex; 
+    align-items:center; 
+    max-width: 1000px; 
+
+}
+
+.split1{
+    border: solid 2px red; 
+    width: 50%; 
+}
+.split2{
+    border: solid 2px red; 
+    width: 50%; 
+}
+
+.split2 ul{
+    list-style-type: none;
+}
+*/
+
+
+/*RHOMEPAGE RESPONSIVENESS STYLES*/
+@media screen and (max-width: 768px){
+    /*LANDING PAGE*/ 
+    .welcome-message{
+        margin: 3rem; 
+        color: var(--clr-mint-cream);
+    
+    }
+    .welcome-message h1{
+        font-size: 2em;      
+    }
+    
+    .welcome-message h2{
+        font-size: 1.25em; 
+    }
+
+    .btn-landing{
+        font-size: 1.5em;
+    }
+
+    .btn-landing-container{
+        width: 11em;
+        padding: 0.3em;
+    }
+}

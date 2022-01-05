@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Helen Pewther</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="fullpage.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/b0ad9bd66a.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <nav>
+            <div class ="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href='#home'>Home</a></li>
+                <li><a href='#about'>About</a></li>
+                <li><a href='#portfolio'>Portfolio</a></li>
+                <li><a href='#resume'>Resume</a></li>
+                <li><a href='#contact'>Contact</a></li>
+            </ul>
+        </nav>
+
+
+        <div id = "fullpage">
+            <header class="flex section" data-anchor="home">
+                <!-- CANVAS -->
+                <section class="canvas-section fullscreen">
+                    <canvas class='fullscreen'></canvas>
+                    <div class='welcome-message flex'>
+                        <h1>Hi! I'm <span class='name'>Helen Pewther</span>.</h1>
+                        <h2>I'm a senior at Georgetown University and an aspiring front-end engineer.</h2>
+                        <div class="btn-landing-container">
+                            <a href="#about" class="btn-landing">My Work <i class="fas fa-arrow-down"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </header>
+
+            
+
+            <!-- ABOUT ME -->
+            <section class="section-about section" data-anchor="about">        
+               <div id="split-container">
+                    <div class="split1">
+                        <img src="./src/girl.png" class="about-icon">
+                        <h2>About Me</h2>
+                        <p>Loren ipsum something something, I think design is cool and yadda yadda yadda.</p>
+                    </div>
+
+                    <div class="split2">
+                        <h2>My Current Toolset</h2>
+                        <article>
+                            <h3>Languages</h3>
+                            <ul>
+                                <li>HTML & CSS</li>
+                                <li>Javascript</li>
+                                <li>C++</li>
+                                <li>Java</li>
+                            </ul>    
+                                
+                        </article>
+                        <article>
+                            <h3>Front-end Development</h3>
+                            <ul>
+                                <li>React</li>
+                                <li>Node</li>
+                                <li>JQuery</li>
+                                <li>Git</li>
+                                <li>Github</li>
+                            </ul>
+                        </article>
+                        <article>
+                            <h3>Design</h3>
+                            <ul>
+                                <li>Photoshop</li>
+                                <li>Illustrator</li>
+                                <li>Procreate</li>
+                            </ul>
+                        </article>
+                    </div>
+              </div>
+            </section>
+    
+
+            <!-- PORTFOLIO-->
+            <section class="section-portfolio section" data-anchor="portfolio">
+                <h1>My Recent Work</h1>
+                <div class="project">Hangul Romanizer</div>
+                <div class="project">Sorting Algorithm Visualizer</div>
+                <div class="project">Project 3</div>
+                <div class="project">Project 4</div>
+                <button>See more on Github</button>
+            </section>
+
+            <!-- MY RESUME -->
+            <section class="section-resume section" data-anchor="resume">
+                <div>
+                    <h1>My resume</h1>
+                    <p>Take a copy for yourself!</p>
+                    <button>download</button>
+                </div>
+                <div>
+                    <iframe>insert pdf file here</iframe>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="section-contact section" data-anchor="contact">
+                <h1>Let's Chat</h1>
+                <h2>email: hpewther@gmail.com</h2>
+                <h2>Socials:</h2>
+                <button>LinkedIn</button>
+                <button>Github</button>
+            </section>
+        </div> 
+
+    <script type="text/javascript" src="fullpage.js"></script>
+    <script type="text/javascript">
+        var myFullPage = new fullpage('#fullpage',{
+            autoScrolling:true,
+        });
+
+    </script>
+    </body>
+
+</html>
