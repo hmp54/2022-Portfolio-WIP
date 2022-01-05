@@ -92,7 +92,6 @@ header{
 .welcome-message{
     margin: 12rem; 
     color: var(--clr-mint-cream);
-
 }
 
 
@@ -168,42 +167,42 @@ nav a:hover:after{
 
 /*ABOUT ME STYLES START HERE*/ 
 .about-icon{
-    max-height: 10rem;
+    max-height: 12rem;
+    border-radius: 50%;
 }
 
 #split-container{
-    border: solid 2px red; 
+    border: solid 2px grey; 
     display: flex;
-    justify-content: center;
-}
-
-/*.section-about{
-    display: flex !important; 
-    justify-content: center !important; 
-    align-items: center;
-}
-#split-container{
-    border: solid 2px red; 
-    height: 70%; 
-    display: flex; 
-    align-items:center; 
-    max-width: 1000px; 
-
+    height: 40%;
 }
 
 .split1{
-    border: solid 2px red; 
-    width: 50%; 
+    display: block; 
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    width: 40%; 
+    border: solid 2px grey; 
 }
+
 .split2{
-    border: solid 2px red; 
-    width: 50%; 
+    display: flex; 
+    justify-content: space-between;
+    width:60%; 
+    border: solid 2px grey; 
+    padding: 2rem;
 }
 
 .split2 ul{
     list-style-type: none;
+
 }
-*/
+
+.card{
+    border: solid grey 2px; 
+    width: 25%; 
+}
 
 
 /*RHOMEPAGE RESPONSIVENESS STYLES*/
