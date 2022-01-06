@@ -6,8 +6,8 @@
 
 :root{
     --clr-cerise: #da4167ff;
-    --clr-mint-cream: rgb(239, 240, 239);
-    --clr-base: rgb(245, 245, 245);
+    --clr-mint-cream: rgb(235, 235, 235);
+    --clr-base: rgb(255, 255, 255);
     --clr-raisin-black: #212431ff;
     --clr-medium-turquoise: #40c9c0ff;
     --clr-independence: #424d61ff;
@@ -166,6 +166,7 @@ nav a:hover:after{
 }
 
 
+
 /*ABOUT ME STYLES START HERE*/ 
 .about-icon{
     max-height: 12rem;
@@ -173,44 +174,84 @@ nav a:hover:after{
 }
 
 #split-container{
-    border: solid 2px grey; 
     display: flex;
-    height: 40%;
     margin-left: 10%;
     margin-right: 10%; 
+
+
 }
 
 .split1{
     display: block; 
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top:auto; 
+    margin-bottom: auto; 
+    margin-left: 2rem;
     text-align: center;
     width: 40%; 
-    border: solid 2px grey; 
+
+
 }
 
 .split2{
-    display: flex; 
     justify-content: space-between;
-    width:60%; 
-    border: solid 2px grey; 
-    padding: 2rem;
+    width:60%;  
+    margin: 2rem;
+
+
 }
 
 .split2 ul{
     list-style-type: none;
 }
 
-.card{
-    border: solid grey 2px; 
+.skill-card, .skill-card2{
+    display: flex; 
     background-color: var(--clr-base);
-    width: 30%; 
-    padding-top: 3rem;  
+    padding: 1em;
+    margin-top: 1rem;
+    border-radius: 15px;
+    height: 20vh;
 }
 
-.card img{
+/*Styles for About page skill list cards*/
+.skill-card img{
     max-height: 4rem;
 }
+
+.icon-title1{
+    padding: 1rem;
+    border-right: solid 2px var(--clr-independence);
+}
+
+.icon-title2{
+    padding: 1rem;
+    border-left: solid 2px var(--clr-independence);
+}
+
+
+/*PORTFOLIO SECTION STYLES*/
+.portfolio-container{
+    display: inline-block;
+    align-items: center;
+    border: 2px solid black; 
+}
+.project-title{
+    font-size: 1.5rem; 
+
+}
+
+.project-title:after{
+    content: '';
+    position: absolute;
+    background-color: var(--clr-independence);
+    height:3px;
+    width: 100px;
+    
+}
+
+
+
+
 
 
 /*HOMEPAGE RESPONSIVENESS STYLES*/

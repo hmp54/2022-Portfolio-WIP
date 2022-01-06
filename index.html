@@ -51,13 +51,17 @@
                     <div class="split1">
                         <img src="./src/profilepic.jpg" class="about-icon">
                         <h2>About Me</h2>
-                        <p>Loren ipsum something something, I think design is cool and yadda yadda yadda.</p>
+                        <p>I'm from the Washington, DC area and I'm currently studying computer science at Georgetown University. 
+                            Art and design have always been huge passions of mine, and they fuel my work as a web developer. 
+                        </p>
                     </div>
 
                     <div class="split2">
-                        <div class="card">
-                            <img src ="./icons/web-programming.png">
-                            <h3>Languages</h3>
+                        <div class="skill-card">
+                           <div class = "icon-title1">
+                                <img src ="./icons/web-programming.png">
+                                <h3>Languages</h3>
+                            </div>
                             <ul>
                                 <li>HTML & CSS</li>
                                 <li>Javascript</li>
@@ -65,9 +69,7 @@
                                 <li>Java</li>
                             </ul>    
                         </div>
-                        <div class="card">
-                            <img src ="./icons/tools.png">
-                            <h3>Dev Tools</h3>
+                        <div class="skill-card">
                             <ul>
                                 <li>React</li>
                                 <li>Node</li>
@@ -75,10 +77,17 @@
                                 <li>Git</li>
                                 <li>Github</li>
                             </ul>
+                                <div class="icon-title2">
+                                <img src ="./icons/tools.png">
+                                <h3>Dev Tools</h3>
+                            </div>
                         </div>
-                        <div class="card">
-                            <img src ="./icons/creative.png">
-                            <h3>Design Tools</h3>
+                        <div class="skill-card">
+                            <div class ="icon-title1"> 
+                                <img src ="./icons/creative.png">
+                                <h3>Design Tools</h3>
+                            </div>
+
                             <ul>
                                 <li>Photoshop</li>
                                 <li>Illustrator</li>
@@ -92,13 +101,32 @@
 
             <!-- PORTFOLIO-->
             <section class="section-portfolio section" data-anchor="portfolio">
-                <h1>My Work</h1>
-                <div class="project">Hangul Romanizer</div>
-                <div class="project">Sorting Algorithm Visualizer</div>
-                <div class="project">Project 3</div>
-                <div class="project">Project 4</div>
-                <button>See more on Github</button>
+               <div class="portfolio-container">
+                    <div class="project-title">
+                        <h1>My Work</h1>
+                    </div>
+                    <div class="project-card">
+                        <h2 class="project-card-title">
+                            Hangul Romanizer
+                        </h2>    
+                    </div>
+                    <div class="project-card">
+                        <h2 class="project-card-title">
+                            Sorting Algorithm Visualizer
+                        </h2>
+                    </div>
+                    <div class="project-card">
+                        <h2 class="project-card-title">
+                            This Website!
+                        </h2>
+                    </div>
+                    <div class="project-card">Project 4</div>
+                    <button>See more on Github</button>
+                </div>
             </section>
+
+
+
 
             <!-- MY RESUME -->
             <section class="section-resume section" data-anchor="resume">
