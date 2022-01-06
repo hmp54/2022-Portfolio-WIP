@@ -5,14 +5,14 @@
 }
 
 :root{
-    --clr-cerise: #da4167ff;
-    --clr-mint-cream: rgb(235, 235, 235);
-    --clr-base: rgb(255, 255, 255);
-    --clr-raisin-black: #212431ff;
-    --clr-medium-turquoise: #40c9c0ff;
-    --clr-independence: #424d61ff;
-    --ff-accent: 'Open Sans', sans-serif;
-    --ff-primary:'Roboto', sans-serif;
+    --clr-accent: rgb(255, 88, 81);
+    --clr-mint-cream: rgb(235, 238, 228);
+    --clr-midtone:  rgb(199, 199, 199);
+    --clr-midtonefade:  rgb(199, 199, 199, 0.5);
+    --clr-independence: rgb(36, 36, 36);
+
+    --ff-accent: 'Montserrat', sans-serif;
+    --ff-primary:'Mulish', sans-serif;
 }
 
 html,
@@ -31,9 +31,10 @@ html{
 
 h1{
     font-family: var(--ff-accent); 
+    font-weight: 800;
 }
 
-a, h2,h3,p,li{
+a, h2,h3,p,li, p{
     font-family: var(--ff-primary);  
 }
 
@@ -50,11 +51,19 @@ a, h2,h3,p,li{
     width: 100%;
 }
 
-.section-about, 
-.section-portfolio, 
+.section-about,
+.section-portfolio{
+    background-color: var(--clr-mint-cream);
+}
 .section-resume,
 .section-contact{
-    background-color: var(--clr-mint-cream);
+    background-color: var(--clr-independence);
+}
+
+/*Style for all card content*/
+.card{
+    background-color: white;
+    box-shadow: 5px 5px 15px var(--clr-midtonefade);
 }
 
 /*INITIAL LANDING PAGE*/
@@ -71,7 +80,7 @@ canvas{
     position: absolute;
     top: 0; 
     left: 0; 
-    background-color: var(--clr-raisin-black);
+    background-color: var(--clr-independence);
     z-index: -1;
 }
 
@@ -79,15 +88,17 @@ header{
     position: relative; 
 }
 .name{
-    color: var(--clr-cerise); 
+    color: var(--clr-accent); 
 }
 
 .welcome-message h1{
-    font-size: 3.5em;      
+    font-size: 3.5em;    
 }
 
 .welcome-message h2{
     font-size: 2em; 
+    font-weight: 300;
+
 }
 
 .welcome-message{
@@ -100,14 +111,13 @@ header{
 .btn-landing-container{
     position: relative; 
     margin: 2.5rem;
-    background: var(--clr-cerise); 
+    background: var(--clr-mint-cream); 
     width: 15rem; 
-    border-radius: 10px;
 }
 
 .btn-landing{
     text-decoration: none;
-    color: var(--clr-raisin-black); 
+    color: var(--clr-independence); 
     font-size: 2rem; 
     
 }
@@ -115,7 +125,8 @@ header{
 
 /*NAV BAR STYLES*/
 nav{
-    background: var(--clr-independence);
+    background: white;
+    border-bottom: solid 1px var(--clr-midtone); 
     width: 100%; 
     height: 4rem; 
     display: flex;
@@ -132,11 +143,11 @@ nav ul{
 }
 
 nav a{
-    color: var(--clr-mint-cream); 
+    color: var(--clr-independence); 
     text-decoration: none; 
-    text-transform: uppercase;
-    letter-spacing: 0.75px;
+    letter-spacing: 2px;
     position: relative; 
+    transition: 0.3s; 
 }
 
 nav a:after{
@@ -151,7 +162,7 @@ nav a:after{
 }
 
 nav a:hover{
-    color: var(--clr-medium-turquoise); 
+    color: black; 
 }
 
 nav a:hover:after{
@@ -188,15 +199,14 @@ nav a:hover:after{
     margin-left: 2rem;
     text-align: center;
     width: 40%; 
-
-
 }
 
+
+/*Styles for About page skill list cards*/
 .split2{
     justify-content: space-between;
     width:60%;  
     margin: 2rem;
-
 
 }
 
@@ -204,16 +214,14 @@ nav a:hover:after{
     list-style-type: none;
 }
 
-.skill-card, .skill-card2{
+.skill-card{
     display: flex; 
-    background-color: var(--clr-base);
+    background-color: white;
     padding: 1em;
     margin-top: 1rem;
-    border-radius: 15px;
     height: 20vh;
 }
 
-/*Styles for About page skill list cards*/
 .skill-card img{
     max-height: 4rem;
 }
@@ -229,28 +237,59 @@ nav a:hover:after{
 }
 
 
+
 /*PORTFOLIO SECTION STYLES*/
 .portfolio-container{
-    display: inline-block;
+    height: 100%;
+    padding: 8rem 10rem 5rem 10rem; 
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 4rem 2fr 2fr 5rem;
+
+}
+
+.project-header h1{ 
+    font-size: 2.5rem; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    height: 100%;
+}
+
+.project-header{
+    grid-column: span 2; 
+}
+
+.git-button{
+    grid-column: span 2;
+    display: flex; 
     align-items: center;
-    border: 2px solid black; 
-}
-.project-title{
-    font-size: 1.5rem; 
-
+    justify-content: center;
 }
 
-.project-title h1:after{
-    content: '';
-    position: absolute;
-    background-color: var(--clr-independence);
-    height:3px;
-    width: 50px;
-
+.git-button a{
+    text-decoration: none;
+    color: white; 
+    background-color: var(--clr-accent);
+    padding: 1.5rem;
 }
 
+.section-resume{
+    position: relative; 
+}
 
-
+.triangle{
+    font-size: 0px; line-height: 0%; width: 0px; 
+    position: absolute; 
+    background-color: var(--clr-mint-cream); 
+    height: 20rem; 
+    width: 100%;
+    top: 0;
+    border-top: 100px solid red;
+    border-bottom: 100px solid green;
+    border-left: 100px solid blue; 
+    border-right: 100px solid yellow; 
+}
 
 
 
