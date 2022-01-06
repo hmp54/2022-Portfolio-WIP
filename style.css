@@ -6,7 +6,8 @@
 
 :root{
     --clr-cerise: #da4167ff;
-    --clr-mint-cream: #ebf5eeff;
+    --clr-mint-cream: rgb(239, 240, 239);
+    --clr-base: rgb(245, 245, 245);
     --clr-raisin-black: #212431ff;
     --clr-medium-turquoise: #40c9c0ff;
     --clr-independence: #424d61ff;
@@ -158,7 +159,7 @@ nav a:hover:after{
 }
 
 /*RESPONSIVE NAVBAR STYLES*/
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
     nav{
         background-color: red;
     }
@@ -175,6 +176,8 @@ nav a:hover:after{
     border: solid 2px grey; 
     display: flex;
     height: 40%;
+    margin-left: 10%;
+    margin-right: 10%; 
 }
 
 .split1{
@@ -196,17 +199,22 @@ nav a:hover:after{
 
 .split2 ul{
     list-style-type: none;
-
 }
 
 .card{
     border: solid grey 2px; 
-    width: 25%; 
+    background-color: var(--clr-base);
+    width: 30%; 
+    padding-top: 3rem;  
+}
+
+.card img{
+    max-height: 4rem;
 }
 
 
-/*RHOMEPAGE RESPONSIVENESS STYLES*/
-@media screen and (max-width: 768px){
+/*HOMEPAGE RESPONSIVENESS STYLES*/
+@media screen and (max-width: 800px){
     /*LANDING PAGE*/ 
     .welcome-message{
         margin: 3rem; 
