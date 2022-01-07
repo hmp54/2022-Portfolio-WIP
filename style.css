@@ -46,6 +46,12 @@ a, h2,h3,p,li, p{
     justify-content: center;
 }
 
+.center-margin{
+    max-width: 1800px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 .fullscreen{
     height: 100vh; 
     width: 100%;
@@ -142,6 +148,7 @@ nav ul{
     display: grid; 
     grid-template-columns: repeat(5, auto);
     width: 70%; 
+    max-width: 1000px; 
 }
 
 nav a{
@@ -191,10 +198,7 @@ nav a:hover:after{
 
 #split-container{
     display: flex;
-    margin-left: 10%;
-    margin-right: 10%; 
-
-
+    width: 100%; 
 }
 
 .split1{
@@ -247,6 +251,7 @@ nav a:hover:after{
 
 
 /*PORTFOLIO SECTION STYLES*/
+
 .portfolio-container{
     padding: 0 10rem 5rem 10rem; 
     display: grid;
@@ -254,7 +259,7 @@ nav a:hover:after{
     grid-column-gap:2rem; 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 4rem 32rem 4rem;
-
+    width: 100%; 
 }
 
 .project-header h1{ 
@@ -289,6 +294,7 @@ nav a:hover:after{
     display: flex;
     align-items:flex-end;
     text-align: left;
+    max-width: 500px; 
 }
 
 .project-card:hover{
@@ -349,10 +355,51 @@ nav a:hover:after{
 
 
 /*PROJECT CARD MODALS*/
-.port-modal{
+.modal-container{
+    background-color: rgba(0,0,0,0.3);
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    height: 100vh; 
+    width: 100vw; 
+    z-index: 99;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
     display: none;
 }
 
+.modal-container .modal{
+    background-color: white;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0,0.2);
+    color: black;
+    width: 60%;
+    height: 65%; 
+    max-width: 900px;
+    display: block; 
+    margin: 0;
+    padding: 0; 
+}
+
+.modal .modal-slides{
+    width: 100%; 
+    height: 65%; 
+    background-color: red;
+
+}
+
+.modal .modal-info{
+    height:35%; 
+    background-color: blue; 
+}
+
+
+
+
+
+.modal-container .modal2{
+    display: none;
+}
 
 
 
@@ -366,10 +413,38 @@ nav a:hover:after{
 }
 
 
+/*CLOSE BUTTON*/
+.x{
+    position: relative; 
+    width: 20px;
+    height: 3px;
+    top:0; 
+    left:0; 
+    transform:translate(-50%,-50%); 
+    background: none; 
+}
 
+.x::before, .x::after{
+    content:'';
+    position: absolute; 
+    width:inherit; 
+    height: inherit; 
+    background: black; 
+}
 
+.x::before{
+    left:0;
+    transform:rotate(-45deg);  
+}
 
+.x::after{
+    left:0;
+    transform:rotate(45deg); 
+}
 
+.x:hover:before, .x:hover:after{
+    background-color: var(--clr-midtone); 
+}
 
 /*HOMEPAGE RESPONSIVENESS STYLES*/
 @media screen and (max-width: 800px){
