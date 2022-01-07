@@ -117,38 +117,72 @@ header{
 
 /*LANDING PAGE BUTTON*/
 .btn-landing-container{
-    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
     margin: 2.5rem;
-    background: var(--clr-mint-cream); 
-    width: 15rem; 
+    background-color: none;
+    border: solid 2px var(--clr-mint-cream);
+    width: 12rem; 
 }
 
-.btn-landing{
+.btn-landing-container a{
+    color: var(--clr-mint-cream);
+    width: 100%; 
+    height: 100%; 
+    margin: 0.5em 1em;
     text-decoration: none;
-    color: var(--clr-independence); 
-    font-size: 2rem; 
-    
+    font-size: 1.5rem;
+    letter-spacing: 2px;
 }
 
+.btn-landing-container:hover{ 
+    transition: 0.3s; 
+    background-color: var(--clr-accent);
+    cursor: pointer; 
+    border: solid 2px var(--clr-accent);  
+}
+
+.btn-landing-container:hover a{
+    color: var(--clr-independence);
+}
 
 /*NAV BAR STYLES*/
+.menu-toggle{
+    display: none;
+}
+
 nav{
+    position: absolute; 
     background: white;
     border-bottom: solid 1px var(--clr-midtone); 
     width: 100%; 
     height: 4rem; 
     display: flex;
-    align-items: center; 
-    position: absolute; 
     z-index: 10; 
+    justify-content: center;
+    
+}
+
+.nav-content-container{
+    display:flex;
+    align-items: center; 
+    z-index: 11;
+    width:100%;
+    height:100%; 
+    max-width: 1800px;
+    margin: 0 5rem; 
 }
 
 nav ul{
     list-style: none; 
     display: grid; 
     grid-template-columns: repeat(5, auto);
-    width: 70%; 
+    width: 40%; 
     max-width: 1000px; 
+
 }
 
 nav a{
@@ -157,27 +191,50 @@ nav a{
     letter-spacing: 2px;
     position: relative; 
     transition: 0.3s; 
+    letter-spacing: 2px;
+
 }
 
-nav a:after{
+nav a:hover{
+    color: var(--clr-accent);
+    font-weight:800;
+    letter-spacing: 1px;
+}
+
+/*OLD VERSION OF NAVBAR*/ 
+/*nav a:after{
     content:''; 
     position: absolute; 
-    background-color: var(--clr-midtone);  
-    height: 3px; 
-    width: 0; 
-    left: 0;
-    top: 1.5rem;
+    background-color: var(--clr-independence);  
+    height: 1px; 
+    width: 0px; 
+    left: 0px;
+    top: 1.3rem;
     bottom: 25px;
     transition: 0.3s; 
 }
 
-nav a:hover{
-    color: var(--clr-accent); 
-}
-
 nav a:hover:after{
     width:100%; 
+}*/ 
+
+nav .logo-container{
+    font-family: var(--ff-accent);
+    font-weight: bold;
+    line-height: 0.9rem;
+    text-transform: uppercase;
+    text-align: right;
+    border-right: 2px solid var(--clr-independence);
+    padding-right: 0.5em;
+    height: 50%; 
+    display: flex; 
+    align-items: center;
 }
+
+nav .nav-social-icons{
+    justify-self: stretch;
+}
+
 
 
 
@@ -252,14 +309,20 @@ nav a:hover:after{
 
 /*PORTFOLIO SECTION STYLES*/
 
+.section-portfolio{
+    padding: 0; 
+    margin: 0; 
+}
+
 .portfolio-container{
-    padding: 0 10rem 5rem 10rem; 
     display: grid;
-    grid-row-gap: 6rem; 
+    grid-row-gap: 2rem; 
     grid-column-gap:2rem; 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 4rem 32rem 4rem;
+    grid-template-rows: 4rem 2fr 4rem;
     width: 100%; 
+    height: 70%; 
+    padding: 0 5rem; 
 }
 
 .project-header h1{ 
@@ -295,6 +358,7 @@ nav a:hover:after{
     align-items:flex-end;
     text-align: left;
     max-width: 500px; 
+    max-height: auto;
 }
 
 .project-card:hover{
