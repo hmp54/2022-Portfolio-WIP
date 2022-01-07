@@ -119,34 +119,33 @@ header{
 .btn-landing-container{
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    text-align: center;
-    margin: 2.5rem;
-    background-color: none;
-    border: solid 2px var(--clr-mint-cream);
-    width: 12rem; 
+    margin: 2.5rem auto;
+    position: absolute; 
+    bottom: 0px; 
+    left: 50%; 
+    transform: translate(-50%,-50%);
 }
 
 .btn-landing-container a{
-    color: var(--clr-mint-cream);
+    color: white;
+    opacity: 0.7;
     width: 100%; 
     height: 100%; 
     margin: 0.5em 1em;
     text-decoration: none;
     font-size: 1.5rem;
     letter-spacing: 2px;
+    transition: 0.5s; 
 }
 
 .btn-landing-container:hover{ 
-    transition: 0.3s; 
-    background-color: var(--clr-accent);
+
     cursor: pointer; 
-    border: solid 2px var(--clr-accent);  
 }
 
 .btn-landing-container:hover a{
-    color: var(--clr-independence);
+    opacity: 1; 
 }
 
 /*NAV BAR STYLES*/
@@ -169,6 +168,7 @@ nav{
 .nav-content-container{
     display:flex;
     align-items: center; 
+    justify-content: space-between;
     z-index: 11;
     width:100%;
     height:100%; 
@@ -197,26 +197,7 @@ nav a{
 
 nav a:hover{
     color: var(--clr-accent);
-    font-weight:800;
-    letter-spacing: 1px;
 }
-
-/*OLD VERSION OF NAVBAR*/ 
-/*nav a:after{
-    content:''; 
-    position: absolute; 
-    background-color: var(--clr-independence);  
-    height: 1px; 
-    width: 0px; 
-    left: 0px;
-    top: 1.3rem;
-    bottom: 25px;
-    transition: 0.3s; 
-}
-
-nav a:hover:after{
-    width:100%; 
-}*/ 
 
 nav .logo-container{
     font-family: var(--ff-accent);
@@ -224,7 +205,7 @@ nav .logo-container{
     line-height: 0.9rem;
     text-transform: uppercase;
     text-align: right;
-    border-right: 2px solid var(--clr-independence);
+    border-right: 2px solid black;
     padding-right: 0.5em;
     height: 50%; 
     display: flex; 
@@ -232,7 +213,23 @@ nav .logo-container{
 }
 
 nav .nav-social-icons{
-    justify-self: stretch;
+    display: flex;
+    align-items: center; 
+    height: 100%; 
+    color: black;
+    font-size: 1.5rem;
+}
+
+nav .nav-social-icons:hover{
+    cursor: pointer; 
+}
+
+#icon{
+    margin: 0 0.2rem;
+}
+
+#icon:hover{
+    color: var(--clr-accent); 
 }
 
 
@@ -468,13 +465,10 @@ nav .nav-social-icons{
 
 
 /*RESUME SECTION STYLES*/ 
-.section-resume{
+.section-experience{
     color: white; 
 }
 
-.section-resume h1{
-
-}
 
 
 /*CLOSE BUTTON*/
@@ -533,5 +527,12 @@ nav .nav-social-icons{
     .btn-landing-container{
         width: 11em;
         padding: 0.3em;
+
     }
 }
+
+/*
+ICON ATTRIBUTIONS
+Github Icon in Line Style By Unicons Font
+
+*/
