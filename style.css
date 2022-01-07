@@ -5,9 +5,9 @@
 }
 
 :root{
-    --clr-accent: rgb(255, 88, 81);
-    --clr-mint-cream: rgb(235, 238, 228);
-    --clr-midtone:  rgb(199, 199, 199);
+    --clr-accent: #ff5851;
+    --clr-mint-cream: #eff1e9;
+    --clr-midtone:  #c7c7c7;
     --clr-midtonefade:  rgb(199, 199, 199, 0.5);
     --clr-independence: rgb(36, 36, 36);
 
@@ -60,10 +60,12 @@ a, h2,h3,p,li, p{
     background-color: var(--clr-independence);
 }
 
+
+
 /*Style for all card content*/
 .card{
     background-color: white;
-    box-shadow: 5px 5px 15px var(--clr-midtonefade);
+    box-shadow: 0px 7px 10px var(--clr-midtonefade);
 }
 
 /*INITIAL LANDING PAGE*/
@@ -143,7 +145,7 @@ nav ul{
 }
 
 nav a{
-    color: var(--clr-independence); 
+    color: black; 
     text-decoration: none; 
     letter-spacing: 2px;
     position: relative; 
@@ -153,21 +155,24 @@ nav a{
 nav a:after{
     content:''; 
     position: absolute; 
-    background-color: var(--clr-mint-cream);  
+    background-color: var(--clr-midtone);  
     height: 3px; 
     width: 0; 
     left: 0;
+    top: 1.5rem;
     bottom: 25px;
     transition: 0.3s; 
 }
 
 nav a:hover{
-    color: black; 
+    color: var(--clr-accent); 
 }
 
 nav a:hover:after{
     width:100%; 
 }
+
+
 
 /*RESPONSIVE NAVBAR STYLES*/
 @media screen and (max-width: 800px){
@@ -200,6 +205,8 @@ nav a:hover:after{
     text-align: center;
     width: 40%; 
 }
+
+
 
 
 /*Styles for About page skill list cards*/
@@ -238,14 +245,15 @@ nav a:hover:after{
 
 
 
+
 /*PORTFOLIO SECTION STYLES*/
 .portfolio-container{
-    height: 100%;
-    padding: 8rem 10rem 5rem 10rem; 
+    padding: 0 10rem 5rem 10rem; 
     display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 4rem 2fr 2fr 5rem;
+    grid-row-gap: 6rem; 
+    grid-column-gap:2rem; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4rem 32rem 4rem;
 
 }
 
@@ -257,11 +265,11 @@ nav a:hover:after{
 }
 
 .project-header{
-    grid-column: span 2; 
+    grid-column: span 3; 
 }
 
 .git-button{
-    grid-column: span 2;
+    grid-column: span 3;
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -274,22 +282,92 @@ nav a:hover:after{
     padding: 1.5rem;
 }
 
-.section-resume{
+.project-card{
+    padding: 2rem 1rem; 
+    transition: 0.4s ease-in-out; 
     position: relative; 
+    display: flex;
+    align-items:flex-end;
+    text-align: left;
 }
 
-.triangle{
-    font-size: 0px; line-height: 0%; width: 0px; 
-    position: absolute; 
-    background-color: var(--clr-mint-cream); 
-    height: 20rem; 
-    width: 100%;
-    top: 0;
-    border-top: 100px solid red;
-    border-bottom: 100px solid green;
-    border-left: 100px solid blue; 
-    border-right: 100px solid yellow; 
+.project-card:hover{
+    transform: translateY(-20px); 
 }
+
+.project-card:before{
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    display: block; 
+    width:100%; 
+    height:100%; 
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)); 
+    z-index: 2; 
+    transition: 0.5s all; 
+    opacity: 0;
+}
+
+.project-card:hover:before{
+    opacity: 1;
+}
+
+.project-card img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+}
+
+.project-card .info{
+    position: relative; 
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(-30px); 
+    transition: 0.4s all; 
+}
+
+.project-card:hover .info{
+    opacity: 1; 
+    transform: translateY(0px); 
+}
+
+.project-card a{
+    background-color: var(--clr-accent);
+    color: white; 
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.project-card .info p{
+    margin-bottom: 1.6rem;
+}
+
+
+/*PROJECT CARD MODALS*/
+.port-modal{
+    display: none;
+}
+
+
+
+
+/*RESUME SECTION STYLES*/ 
+.section-resume{
+    color: white; 
+}
+
+.section-resume h1{
+
+}
+
+
+
+
 
 
 
