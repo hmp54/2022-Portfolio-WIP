@@ -31,7 +31,7 @@ html{
 
 h1{
     font-family: var(--ff-accent); 
-    font-weight: 800;
+    font-weight: bolder;
 }
 
 a, h2,h3,p,li, p{
@@ -261,6 +261,7 @@ nav .nav-social-icons:hover{
     margin-bottom: auto; 
     margin-left: 2rem;
     width: 40%; 
+    border
 }
 
 .split .info{
@@ -347,9 +348,9 @@ nav .nav-social-icons:hover{
 
 .project-header h2{
     color: var(--clr-accent);
-    font-weight: lighter;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 1rem;
+    font-weight:500;
 }
 .project-header h1{ 
     color: white;
