@@ -347,7 +347,7 @@ nav .nav-social-icons:hover{
 
 .project-header h2{
     color: var(--clr-accent);
-    font-weight: light;
+    font-weight: lighter;
     letter-spacing: 2px;
     margin-bottom: 1rem;
 }
@@ -355,9 +355,10 @@ nav .nav-social-icons:hover{
     color: white;
     font-size: 3rem; 
     text-transform: uppercase;
-    letter-spacing: 1.7px;
+    letter-spacing: 2px;
     height: 100%;
     line-height: 2rem;
+    font-weight: 600;
 }
 
 .project-header{
