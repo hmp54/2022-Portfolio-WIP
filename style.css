@@ -12,7 +12,7 @@
     --clr-independence: rgb(36, 36, 36);
 
     --ff-accent: 'Montserrat', sans-serif;
-    --ff-primary:'Mulish', sans-serif;
+    --ff-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
@@ -336,7 +336,7 @@ nav .nav-social-icons:hover{
 
 .portfolio-container{
     display: grid;
-    grid-row-gap: 2rem; 
+    grid-row-gap: 4rem; 
     grid-column-gap:2rem; 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 4rem 2fr 4rem;
@@ -345,16 +345,26 @@ nav .nav-social-icons:hover{
     padding: 0 5rem; 
 }
 
+.project-header h2{
+    color: var(--clr-accent);
+    font-weight: light;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
 .project-header h1{ 
     color: white;
-    font-size: 2.5rem; 
+    font-size: 3rem; 
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.7px;
     height: 100%;
+    line-height: 2rem;
 }
 
 .project-header{
     grid-column: span 3; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .git-button{
