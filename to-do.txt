@@ -1,0 +1,11 @@
+1. Wireframe About me, Resume and Contact Pages
+    -Combine the resume and contact Pages
+2. Add a footer to the Page
+3. Design/implement the background for the hero page
+4. Add a preoloading page 
+
+PORTFOLIO PAGE: 
+
+
+INSPO:
+https://studio081.me/
