@@ -3,6 +3,9 @@
 2. Add a footer to the Page
 3. Design/implement the background for the hero page
 4. Add a preoloading page 
+5. Refactor the skills list on the about me page to 
+a grid display so that it is more responsive on shorter 
+displays. 
 
 PORTFOLIO PAGE: 
 
