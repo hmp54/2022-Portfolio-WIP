@@ -61,15 +61,21 @@ h2{
     width: 100%;
 }
 
-.section-about{
+.section-about,
+.section-contact{
     background-color: var(--clr-mint-cream);
 }
 .section-resume,
-.section-contact,
-.section-portfolio{
+.section-portfolio,
+.section-experience{
     background-color: var(--clr-independence);
 }
 
+.page-title{
+    font-size: 3rem; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
 /*INITIAL LANDING PAGE*/
 .canvas-section{
@@ -100,7 +106,7 @@ header{
     font-size: 3.5em;    
 }
 
-.welcome-message h2{
+.welcome-message h3{
     font-size: 2em; 
     font-weight: 300;
 
@@ -189,7 +195,6 @@ nav a{
     position: relative; 
     transition: 0.3s; 
     letter-spacing: 2px;
-
 }
 
 nav a:hover{
@@ -214,18 +219,19 @@ nav .nav-social-icons{
     align-items: center; 
     height: 100%; 
     color: black;
-    font-size: 1.5rem;
+    font-size: 1.5rem; 
 }
 
 nav .nav-social-icons:hover{
     cursor: pointer; 
 }
 
-#icon{
+#icon, #icon2{
     margin: 0 0.2rem;
+    transition: 0.3s;
 }
 
-#icon:hover{
+#icon:hover, #icon2:hover{
     color: var(--clr-accent); 
 }
 
@@ -242,18 +248,13 @@ nav .nav-social-icons:hover{
 
 
 /*ABOUT ME STYLES START HERE*/ 
-.about-icon{
-    max-height: 12rem;
-}
 
 #split-container{
     display: flex;
     flex-direction: column;   
     align-items: center; 
     width: 90%;
-    max-width: 1800px; 
-    border: solid black 1px; 
-    height: 70%;
+    max-width: 1200px; 
 }
 
 .split1{
@@ -261,35 +262,12 @@ nav .nav-social-icons:hover{
     display: flex; 
     align-items: center;
     width: 80%; 
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
-.info{   
-    text-align: left;
-}
-
-.info h1{
-    margin: 0.5rem 1.5rem;
-}
-
-.info h2{
-    font-size: 1rem;
-    margin: 0.5rem 1.5rem;
-}
-
-.info span{
-    color: var(--ff-accent);
-}
-
-.info p{
-    margin: 0.5rem 1.5rem;
-}
-
-
-.split2{
-    display: flex; 
-    justify-content: space-around;
-    width: 80%; 
+.split1 img{
+    width: 30%;
+    height:
 }
 
 
@@ -297,11 +275,14 @@ nav .nav-social-icons:hover{
 
 /*Styles for About page skill list cards*/
 .split2{
-    display: flex;
+    display: flex; 
+    justify-content: space-around;
+    width: 80%;
 }
 
 .split2 ul{
     list-style-type: none;
+    margin-bottom: 4rem;
 }
 
 .skill-card{
@@ -312,15 +293,34 @@ nav .nav-social-icons:hover{
 
 .skill-card h3{
     text-transform: uppercase;
-}
-
-.skill-card h3:before{
-    
+    margin-bottom: 1rem;
 }
 
 
+.skill-card img{
+    width: 30%; 
+    height: auto;
+    margin-bottom: 1rem;
+}
 
+.skill-card ul{
+    line-height: 2rem;
+    margin-left: 2rem;
+}
 
+.skill-card span{
+    color: var(--clr-accent);
+}
+
+.about-btn{
+    border: 2px solid var(--clr-accent);
+    padding: 0.5em 1em;
+}
+
+.about-btn a{ 
+    color: var(--clr-accent);
+    text-decoration: none;
+}
 /*PORTFOLIO SECTION STYLES*/
 
 .section-portfolio{
@@ -345,9 +345,7 @@ nav .nav-social-icons:hover{
 }
 .project-header h1{ 
     color: white;
-    font-size: 3rem; 
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
     height: 100%;
     line-height: 2rem;
     font-weight: 600;
@@ -441,6 +439,22 @@ nav .nav-social-icons:hover{
     margin-bottom: 1.6rem;
 }
 
+.info{   
+    text-align: left;
+}
+
+.info h1{
+    font-size: 2rem;
+    margin: 0.5rem 1.5rem;
+}
+
+.info h2{
+    margin: 0.5rem 1.5rem;
+}
+
+.info p{
+    margin: 0.5rem 1.5rem;
+}
 
 /*PROJECT CARD MODALS*/
 .modal-container{
@@ -557,6 +571,47 @@ nav .nav-social-icons:hover{
 
     }
 }
+
+
+
+/*CONTACT ME PAGE STYLES START HERE*/
+
+.contact-content{
+    display: grid;
+    grid-auto-flow: row;
+    max-width: 1200px;
+    gap: 2rem;
+}
+
+
+.contact{
+    text-align: left;
+}
+
+.contact h2{
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+
+}
+.contact p{
+    font-size: 1.5rem;
+}
+
+#icon2{
+    color: black; 
+    font-size: 2rem;
+}
+
+@media (min-width: 900px){
+    .contact-content{
+        grid-auto-flow: column; 
+    }
+}
+
+
+
+
+
 
 /*
 ICON ATTRIBUTIONS

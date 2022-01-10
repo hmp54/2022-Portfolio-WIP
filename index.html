@@ -31,7 +31,7 @@
     
                 <div class="nav-social-icons">
                     <a href="#"><i class="fab fa-github" id="icon"></i> </a>
-                    <a href="#"></a><i class="fab fa-linkedin" id="icon"></i></a>
+                    <a href="#"><i class="fab fa-linkedin" id="icon"></i></a>
                 </div>
             </div>
         </nav>
@@ -44,7 +44,7 @@
                     <canvas class='fullscreen'></canvas>
                     <div class='welcome-message flex'>
                         <h1>Hi! I'm <span class='name'>Helen Pewther</span>.</h1>
-                        <h2>I'm a senior at Georgetown University and an aspiring front-end engineer.</h2>
+                        <h3>I'm a senior at Georgetown University and an aspiring front-end engineer.</h3>
                     </div>
                     <div class="btn-landing-container">
                         <a href="#about">Learn More <i class="fas fa-angle-down"></i></a>
@@ -60,7 +60,7 @@
                     <div class="split1">
                         <img src="./src/profilepic.jpg" class="about-icon">
                         <div class="info">
-                            <h2>Hi, I'm Helen!</h2>
+                            <h2>Nice to meet you!</h2>
                             <h1>I'm a student and entrepreneur driven 
                                 by a love for design. 
                             </h1>
@@ -77,11 +77,8 @@
 
                     <div class="split2">
                         <div class="skill-card">
-                           <div class = "skill-title">
-                                <img src ="./icons/web-programming.png">
-                                
-                            </div>
-                            <h3>Languages</h3>
+                            <img src ="./icons/web-programming.png">
+                            <h3><span>.01</span> Languages</h3>
                             <ul>
                                 <li>HTML & CSS</li>
                                 <li>Javascript</li>
@@ -90,10 +87,8 @@
                             </ul>    
                         </div>
                         <div class="skill-card">
-                            <div class="skill-title">
-                                <img src ="./icons/tools.png">
-                            </div>
-                            <h3>Dev Tools</h3>
+                            <img src ="./icons/tools.png">
+                            <h3><span>.02</span> Dev Tools</h3>
                             <ul>
                                 <li>React</li>
                                 <li>Node</li>a
@@ -103,16 +98,17 @@
                             </ul>
                         </div>
                         <div class="skill-card">
-                            <div class ="skill-title"> 
-                                <img src ="./icons/creative.png">
-                            </div>
-                            <h3>Design Tools</h3>
+                            <img src ="./icons/creative.png">
+                            <h3><span>.03</span> Design Tools</h3>
                             <ul>
                                 <li>Photoshop</li>
                                 <li>Illustrator</li>
                                 <li>Procreate</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="about-btn">
+                        <a href="#portfolio">See what I've made</a>
                     </div>
               </div>
             </section>
@@ -123,7 +119,7 @@
                <div class="portfolio-container center-margin">
                     <div class="project-header">
                         <h2>Some of my work</h2>
-                        <h1>Portfolio</h1>
+                        <h1 class="page-title">Portfolio</h1>
                     </div>
 
                     <div class="project-card card" id="project-card1">
@@ -199,7 +195,7 @@
             <!-- MY RESUME/EXPERIENCE -->
             <section class="section-experience section" data-anchor="experience">
                 <div>
-                    <h1>Experience</h1>
+                    <h1 class="page-title">Experience</h1>
                     <p>Take a copy for yourself!</p>
                     <button>download</button>
                 </div>
@@ -210,11 +206,23 @@
 
             <!-- CONTACT -->
             <section class="section-contact section" data-anchor="contact">
-                <h1>Let's Chat</h1>
-                <h2>email: hpewther@gmail.com</h2>
-                <h2>Socials:</h2>
-                <button>LinkedIn</button>
-                <button>Github</button>
+                <div class="contact-content center-margin">
+                    <h1 class="page-title" id="contact-title">Let's Chat</h1>
+                    <div class="contact">
+                        <h2>Drop a message</h2>
+                        <p>hmp54@georgetown.edu</p>
+                    </div>
+                    <div class="contact">
+                        <h2>Call</h2>
+                        <p>301-404-4159</p>
+                    </div>
+                    <div class="contact">
+                        <h2>Social</h2>
+                        <a href="#"><i class="fab fa-github" id="icon2"></i></a>
+                        <a href="#"><i class="fab fa-linkedin" id="icon2"></i></a>
+                </div>
+            </div>
+
             </section>
         </div> 
 
