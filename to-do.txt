@@ -1,14 +1,25 @@
-1. Wireframe About me, Resume and Contact Pages
-    -Combine the resume and contact Pages
+1. Wireframe About me, Resume and Contact Pages - DONE
 2. Add a footer to the Page
 3. Design/implement the background for the hero page
 4. Add a preoloading page 
 5. Refactor the skills list on the about me page to 
-a grid display so that it is more responsive on shorter 
-displays. 
+    a grid display so that it is more responsive on shorter 
+    displays. 
+6. Implement modal pages on portfolio 
+7. Fix alignment issues on the portfolio's project cards
+8. Implement button animations 
 
-PORTFOLIO PAGE: 
+NOTES: 
+-The about me page looks fine on bigger displays, but starts 
+to be really wonky with smaller displays. AKA broken responsiveness. But the portfolio 
+page works fine, so maybe model the about me page on that? 
+
+-The contact page font size is way too big on smaller displays, but looks fine 
+on bigger ones. 
+
+-still need to implement the experience page
 
 
 INSPO:
 https://studio081.me/
+Shin Danbee

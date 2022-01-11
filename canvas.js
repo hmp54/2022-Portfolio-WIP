@@ -1,134 +1,103 @@
-let canvas, ctx, circles, loopId, id; 
-const WIDTH = window.innerWidth; 
-const HEIGHT = window.innerHeight; 
-const CIRCLE_AMOUNT = 100; 
-const CIRCLE_COLOR = '#424d61ff';
-const LINE_COLOR = '#424d61ff'; 
-const RADIUS = 0.2; 
-const VARIANT_RADIUS = 2; 
-const SPEED = 01; 
-const LINK_RADIUS = 100; 
-const LINE_WIDTH = 0.25; 
-
-(()=>{
-    document.addEventListener('DOMContentLoaded', () => init())
-})()
-
-const init = () =>{
-    console.log('initialized'); 
-    canvas = document.querySelector('canvas'); 
-    ctx = canvas.getContext('2d'); 
-    resizeReset(); 
-    initElements(); 
-    startAnimation(); 
-};
-
-const resizeReset = () =>{
-    console.log('resizeReset()'); 
-    canvas.width = WIDTH; 
-    canvas.height = HEIGHT;    
-};
-
-const initElements = () =>{
-    console.log('initElements'); 
-    circles = [];
-    for(let i = 0; i < CIRCLE_AMOUNT; i++){
-        circles.push(new Circle()); 
-    }
-};
-
-const startAnimation = () =>{
-    console.log('startAnimation'); 
-    loopId = requestAnimationFrame(animationLoop); 
-};
-
-const animationLoop = () =>{
-    console.log('animationLoop')
-    ctx.clearRect(0,0,WIDTH,HEIGHT);
-    drawScene(); 
-    id = requestAnimationFrame(animationLoop); 
+const canvas = document.getElementById('canvas1');
+const ctx = canvas.getContext('2d'); 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight; 
+let particlesArray; 
+let mouse = {
+    x: null,
+    y: null,
+    radius: (canvas.height/80) * (canvas.width/80) 
 }
 
-const drawScene = () =>{
-    console.log('drawScene'); 
-    drawParticle(); 
-    drawLine(); 
-};
-
-const drawLine = () =>{
-    for(let i = 0; i < circles.length; i++){
-        linkPoints(circles[i], circles); 
+//event listener to get the position of the cursor 
+window.addEventListener('mousemove',
+    function(event){
+        mouse.x = event.x; 
+        mouse.y = event.y; 
     }
-}
+);
 
-const linkPoints = (point, hubs) =>{
-    for(let i = 0; i < hubs.length; i++){
-        let distance = checkDistance(point.x, point.y, hubs[i].x, hubs[i].y); 
-        const opacity = 2.95 - distance / LINK_RADIUS;
-        if(opacity > 0){
-            ctx.lineWidth = LINE_WIDTH; 
-            ctx.strokeStyle = LINE_COLOR; 
-
-            ctx.beginPath();
-            ctx.moveTo(point.x, point.y); 
-            ctx.lineTo(hubs[i].x, hubs[i].y); 
-            ctx.closePath(); 
-            ctx.stroke(); 
-        } 
-    }
-}
-
-const checkDistance = (x1, x2, y1, y2) =>{
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2-y1, 2)); 
-}
-
-const drawParticle = () =>{
-    console.log('drawParticle');
-    for(let i = 0; i < circles.length; i++){
-        circles[i].update(); 
-        circles[i].draw();
-    }
-};
-
-function Circle(){
-    console.log('Circle()'); 
-    this.x = Math.random() * WIDTH; 
-    this.y = Math.random() * HEIGHT; 
-
-    this.color = CIRCLE_COLOR; 
-    this.radius = RADIUS + Math.random() + VARIANT_RADIUS;
-    this.speed = SPEED * Math.random() * SPEED; 
-    this.directionAngle = Math.floor(Math.random()*360);  
-    
-    this.vector = {
-       x: Math.cos(this.directionAngle) * this.speed,
-       y: Math.sin(this.directionAngle) * this.speed,
+//create particle
+class Particle{
+    constructor(x, y, directionX, directionY, size, color){
+        this.x = x; 
+        this.y = y; 
+        this.directionX = directionX; 
+        this.directionY = directionY; 
+        this.size = size; 
+        this.color = color; 
     }
 
-    this.update = function (){
-        if(this.x >= WIDTH || this.x <= 0){
-            this.vector.x = -1; 
-        }
-
-        if(this.y >= HEIGHT || this.y <= 0){
-            this.vector.y = -1; 
-        }
-
-        if(this.x > WIDTH) this.x = WIDTH; 
-        if(this.y > HEIGHT) this. y = HEIGHT; 
-
-        if(this.x < 0) this.x = 0; 
-        if(this.y < 0) this.y = 0; 
-
-        this.x += this.vector.x; 
-        this.y += this.vector.y; 
-    };
-
-    this.draw = function (){
+    //function to draw individual particles
+    draw(){
         ctx.beginPath(); 
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2); 
-        ctx.closePath();
-        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI *2, false);
+        ctx.fillStyle = '#d4ffdf'; 
         ctx.fill(); 
-    };
-};
+    }
+
+    //check particle position, check mouse position
+    update(){ 
+        //check if particles are at edge of screen, reverse direction accordingly  
+        if(this.x > canvas.width || this.x < 0){
+            this.directionX = -this.directionX; 
+        }
+        if(this.y > canvas.height || this.y < 0){
+            this.directionY = -this.directionY; 
+        }
+
+        //collision detection
+        let dx = mouse.x - this.x; 
+        let dy = mouse.y - this.y; 
+        let distance = Math.sqrt(dx*dy + dy*dy); 
+        if(distance < mouse.radius + this.size){
+            if(mouse.x < this.x && this.x < canvas.width - this.size * 10){
+                this.x += 10; 
+            }
+            if(mouse.x > this.x && this.x > this.size *10){
+                this.x -=10; 
+            }
+            if(mouse.y < this.y && this.y < canvas.height - this.size * 10){
+                this.y += 10; 
+            }
+            if(mouse.y > this.y && this.y > this.size * 10){
+                this.y -= 10; 
+            }
+        } 
+        //move our particle
+        this.x += this.directionX; 
+        this.y += this.directionY; 
+        //draw particle
+        this.draw(); 
+    }
+}
+
+//create our particle array
+function init(){
+    particlesArray = []; 
+    let numberOfParticles = (canvas.height * canvas.width) / 9000; 
+    for(let i; i < numberOfParticles; i++){
+        let size = (Math.random() * 5) + 1; 
+        let x = (Math.random() * ((innerwidth - size * 2) - (size *2)) + size*2); 
+        let y = (Math.random() * ((innerHeight - size * 2) - (size *2)) + size*2); 
+        let directionX = (Math.random() * 5) - 2.5; 
+        let directionY = (Math.random() * 5) - 2.5; 
+        let color = '#d4ffdf';
+
+        particlesArray.push(new Particle(x, y, directionX, directionY, size, color)); 
+    }
+}
+
+//animation loop 
+function animate(){
+    requestAnimationFrame(animate); //API for smoother animation
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+    for(let i = 0; i < particlesArray.length; i++){
+        particlesArray[i].updates(); 
+    }
+}
+
+init(); 
+animate(); 
+console.log('hello, end of script'); 
