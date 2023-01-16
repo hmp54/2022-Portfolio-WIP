@@ -246,14 +246,37 @@ nav .nav-social-icons:hover{
 
 /*RESPONSIVE NAVBAR STYLES*/
 @media screen and (max-width: 800px){
-    nav{
-
+    .nav-menu{
+        display: none;
     }
+
+    .info h1{
+        font-size: 1.25rem !important;
+    }
+
+    .split1 img{
+        display: none;
+    }
+
 }
 
 
 
 /*ABOUT ME STYLES START HERE*/ 
+
+@media screen and (max-width: 800px){
+    .info h1{
+        font-size: 1.5rem !important;
+    }
+
+    .split1 img{
+        display: none;
+    }
+
+    .skill-card h3{
+        font-size: 1rem;
+    }    
+}
 
 #split-container{
     display: flex;
@@ -330,7 +353,16 @@ nav .nav-social-icons:hover{
     color: var(--clr-accent);
     text-decoration: none;
 }
+
+
 /*PORTFOLIO SECTION STYLES*/
+@media screen and (max-width: 800px){
+   .portfolio-container{
+    display: flex !important;
+    flex-direction: column;
+   }
+
+}
 
 .section-portfolio{
     padding: 0; 
@@ -522,8 +554,6 @@ nav .nav-social-icons:hover{
 .modal .modal-slides{
     width: 100%; 
     height: 65%; 
-
-
 }
 
 .modal .modal-info{
@@ -614,8 +644,8 @@ nav .nav-social-icons:hover{
         font-size: 2em;      
     }
     
-    .welcome-message h2{
-        font-size: 1.25em; 
+    .welcome-message h3{
+        font-size: 1.5em; 
     }
 
     .btn-landing{
